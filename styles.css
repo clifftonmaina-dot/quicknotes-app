@@ -1,0 +1,185 @@
+/* 1. Box-sizing reset and base styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 2. Header and Footer */
+header {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+header h1, header p {
+  margin: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  margin-top: 40px;
+}
+
+/* 3. Centred main area and section cards */
+main {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+/* 4. Flexbox form */
+#note-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#note-form label {
+  font-weight: bold;
+}
+
+#note-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+#note-category {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Buttons with visible hover state */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Bonus: Clear all notes button */
+#clear-all-btn {
+  background-color: #e74c3c;
+  margin-bottom: 16px;
+}
+
+#clear-all-btn:hover {
+  background-color: #c0392b;
+}
+
+/* 5. Error message in red */
+#error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  min-height: 24px; 
+}
+
+/* Search input */
+#search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+/* 6. Note cards */
+#notes-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note-card {
+  background-color: #fff;
+  padding: 16px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.note-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.note-card button {
+  background-color: #e74c3c;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+.note-card button:hover {
+  background-color: #c0392b;
+}
+
+/* 7. Category left-border colours */
+.category-personal {
+  border-left: 5px solid teal;
+}
+
+.category-work {
+  border-left: 5px solid darkred;
+}
+
+.category-study {
+  border-left: 5px solid blue;
+}
+
+/* 8. Media query for stacking form on small screens */
+@media (max-width: 600px) {
+  #note-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  #note-form label {
+    margin-bottom: -6px;
+  }
+}
